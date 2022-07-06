@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const topicsSlice = createSlice(
+export const topicsSlice = createSlice(
 	{
 		name: 'topics',
-		initialState: {},
+		initialState: {
+			topics: {}
+		},
 		reducers: {
 			addTopic: (state, action) => {
 				const { id, name, icon } = action.payload;
@@ -11,7 +13,7 @@ const topicsSlice = createSlice(
 					id: id,
 					name: name,
 					icon,
-					quizIds : []
+					quizIds: []
 				}
 			}
 		}
